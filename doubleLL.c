@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void doubleLinkedList_init(doubleLinkedList *list)
+void dll_init(DoubleLinkedList *list)
 {
     list = malloc(sizeof(list));
 }
 
-void doubleLinkedList_place_before(doubleLinkedList *list, int element)
+void dll_place_before(DoubleLinkedList *list, int element)
 {
     Node *temp = malloc(sizeof(*temp));
     temp->data = element;
@@ -15,17 +15,17 @@ void doubleLinkedList_place_before(doubleLinkedList *list, int element)
     if (list->size == 0)
         list->tail = temp;
     else
-        list->head->pre = temp;
+        list->head->previous = temp;
 
     list->heap = temp;
     list->size++;
 }
 
-void doubleLinkedList_place_after(doubleLinkedList *list, int element)
+void dll_place_after(DoubleLinkedList *list, int element)
 {
     Node *temp = malloc(sizeof(*temp));
     temp->data = element;
-    temp->pre = list->tail;
+    temp->previous = list->tail;
     if (list->size == 0)
         list->head = temp;
     else
@@ -33,9 +33,4 @@ void doubleLinkedList_place_after(doubleLinkedList *list, int element)
 
     list->tail = temp;
     list->size++;
-}
-
-int doubleLinkedList_get_data(doubleLinkedList *list, int index)
-{
-
 }
