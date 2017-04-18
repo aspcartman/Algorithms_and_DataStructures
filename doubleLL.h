@@ -14,7 +14,7 @@ void doubleLinkedList_init(doubleLinkedList *list);
 
 void doubleLinkedList_place_before(doubleLinkedList *list, int element);
 
-void doubleLinkedList_place_append(doubleLinkedList *list, int element);
+void doubleLinkedList_place_after(doubleLinkedList *list, int element);
 
 int  doubleLinkedList_get_element(doubleLinkedList *list, int index);
 
