@@ -1,21 +1,21 @@
-typedef struct simpleNode {
+typedef struct SimpleNode {
 	int data;
-	struct simpleNode *pre;
-	struct simpleNode *next;
+	struct SimpleNode *previous;
+	struct SimpleNode *next;
 } Node;
 
 typedef struct {
 	int size;
 	Node *head;
 	Node *tail;
-} doubleLinkedList;
+} DoubleLinkedList;
 
-void doubleLinkedList_init(doubleLinkedList *list);
+void dll_init(DoubleLinkedList *list);
 
-void doubleLinkedList_place_before(doubleLinkedList *list, int element);
+void dll_place_before(DoubleLinkedList *list, int element);
 
-void doubleLinkedList_place_after(doubleLinkedList *list, int element);
+void dll_place_after(DoubleLinkedList *list, int element);
 
-int  doubleLinkedList_get_element(doubleLinkedList *list, int index);
+int dll_get_element(DoubleLinkedList *list, int index);
 
-int  doubleLinkedList_remove_element(doubleLinkedList *list, int index);
+int dll_remove_element(DoubleLinkedList *list, int index);
