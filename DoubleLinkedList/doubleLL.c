@@ -29,7 +29,7 @@ void dllPlaceBefore(DoubleLinkedList *list, int element) {
         list->tail = temp;
     else
         list->head->previous = temp;
-
+    
     list->head = temp;
     list->size++;
 }
@@ -42,7 +42,7 @@ void dllPlaceAfter(DoubleLinkedList *list, int element) {
         list->head = temp;
     else
         list->tail->next = temp;
-
+    
     list->tail = temp;
     list->size++;
 }
