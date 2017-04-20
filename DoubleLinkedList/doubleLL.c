@@ -14,14 +14,25 @@ struct DoubleLinkedList {
     Node *tail;
 };
 
-void dllInit(DoubleLinkedList *list) {
+DoubleLinkedList *dllCreate() {
+    DoubleLinkedList *list;
     list = malloc(sizeof(DoubleLinkedList));
     list->size = 0;
     list->head = NULL;
     list->tail = NULL;
+
+    return list;
 }
 
-void dllPlaceBefore(DoubleLinkedList *list, int element) {
+int dllIfEmpty(DoubleLinkedList *list) {
+    if (list->size == 0) {
+        printf("List is empty.");
+        return -1;
+    }
+    else return 0;
+}
+
+void dllAppend(DoubleLinkedList *list, int element) {
     Node *temp = malloc(sizeof(Node));
     temp->data = element;
     temp->next = list->head;
@@ -34,7 +45,7 @@ void dllPlaceBefore(DoubleLinkedList *list, int element) {
     list->size++;
 }
 
-void dllPlaceAfter(DoubleLinkedList *list, int element) {
+void dllPrepend(DoubleLinkedList *list, int element) {
     Node *temp = malloc(sizeof(Node));
     temp->data = element;
     temp->previous = list->tail;
@@ -45,4 +56,75 @@ void dllPlaceAfter(DoubleLinkedList *list, int element) {
     
     list->tail = temp;
     list->size++;
+}
+
+void dllPrintList(DoubleLinkedList *list) {
+    if (dllIfEmpty(list) == -1)
+        return;
+
+    int i = 0;
+    Node *temp = list->head;
+    for(; i < list->size; i++) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+
+void dllInsertAfter(DoubleLinkedList *list, Node *node, int element) {
+    if (dllIfEmpty(list) == -1)
+        return;
+
+    Node *temp = malloc(sizeof(Node));
+}
+
+void dllInsertBefore(DoubleLinkedList *list, Node *node, int element) {
+    if (dllIfEmpty(list) == -1)
+        return;
+
+    Node *temp = malloc(sizeof(Node));
+}
+
+Node *dllGetFirstNode(DoubleLinkedList *list) {
+    if (dllIfEmpty(list) == -1)
+        return NULL; //???
+
+    return list->head;
+}
+
+Node *dllGetLastNode(DoubleLinkedList *list) {
+    if (dllIfEmpty(list) == -1)
+        return NULL; //???
+
+    return list->tail;
+}
+
+Node *dllGetNextNode(DoubleLinkedList *list, Node *node) {
+    if (dllIfEmpty(list) == -1)
+        return NULL; //???
+
+    if (node->next != NULL)
+        return node->next;
+    else {
+        printf("Your node is the last one.");
+        return NULL;
+    }
+}
+
+Node *dllGetPreviousNode(DoubleLinkedList *list, Node *node) {
+    if (dllIfEmpty(list) == -1)
+        return NULL; //???
+
+    if (node->previous != NULL)
+        return node->previous;
+    else {
+        printf("Your node is the first one.");
+        return NULL;
+    }
+}
+
+void dllSwapNodes(DoubleLinkedList *list, Node *firstNode, Node *secondNode) {
+    if (dllIfEmpty(list) == -1)
+        return;
+
+
 }

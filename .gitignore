@@ -118,4 +118,29 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+cmake-build-debug/
+.idea/**/mongoSettings.xml
+*.iws
+/out/
+.idea_modules/
+atlassian-ide-plugin.xml
+.idea/replstate.xml
+# *.iml
+# modules.xml
+# .idea/misc.xml
+# *.ipr
+.idea/sonarlint
+
 # End of https://www.gitignore.io/api/c,c++,xcode,objective-c
